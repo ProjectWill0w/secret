@@ -192,11 +192,20 @@
 </div>
 
 
+<style>
+  .container {
+    position: relative; /* Add this */
+    /* existing styles... */
+  }
+  #noBtn {
+    position: absolute;
+    /* existing styles... */
+  }
+</style>
+
 <script>
   const noBtn = document.getElementById("noBtn");
-  const yesBtn = document.getElementById("yesBtn");
   const container = document.querySelector(".container");
-  const message = document.getElementById("message");
 
   function moveButton() {
     const btnWidth = noBtn.offsetWidth;
@@ -213,12 +222,9 @@
     noBtn.style.top = y + "px";
   }
 
-  noBtn.addEventListener("mouseenter", moveButton);
-
-  yesBtn.addEventListener("click", () => {
-    message.style.display = "block";
-  });
+  noBtn.addEventListener("click", moveButton);
 </script>
+
 
 
 
