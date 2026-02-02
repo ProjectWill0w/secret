@@ -43,7 +43,7 @@
     }
 
     h1 {
-      color: #ff4d6d;
+      color: #f6a6c1;
       margin-bottom: 35px;
       font-size: 34px;
       text-shadow:
@@ -93,7 +93,7 @@
       100% { transform: scale(1); opacity: 1; }
     }
 
-    /* 🌼 Flowers around frame */
+    /* 🌼 Flowers */
     .flower {
       position: absolute;
       font-size: 34px;
@@ -148,7 +148,7 @@
 </head>
 <body>
 
-  <!-- ⭐ Stars -->
+  <!-- Stars -->
   <div class="star" style="left:5%; font-size:14px; animation-duration:10s;">⭐</div>
   <div class="star" style="left:15%; font-size:22px; animation-duration:16s;">✨</div>
   <div class="star" style="left:25%; font-size:18px; animation-duration:13s;">⭐</div>
@@ -157,7 +157,7 @@
   <div class="star" style="left:70%; font-size:26px; animation-duration:22s;">✨</div>
   <div class="star" style="left:85%; font-size:20px; animation-duration:17s;">⭐</div>
 
-  <!-- 🐟 Fish -->
+  <!-- Fish -->
   <div class="fish" style="top:18%; font-size:36px; animation-duration:14s;">🐠</div>
   <div class="fish" style="top:30%; font-size:46px; animation-duration:22s;">🐟</div>
   <div class="fish" style="top:42%; font-size:32px; animation-duration:12s;">🐡</div>
@@ -176,8 +176,8 @@
 
     <h1>Will you be my Valentine?</h1>
     <button id="yesBtn">Yes</button>
-    <button id="noBtn">No (press if you hate me)</button>
-    <div id="message">YIPEEEEEE see you at La Terrace Claudine on 13 February :D ✨</div>
+    <button id="noBtn">No (press if you hate me) </button>
+    <div id="message">YIPEEEEEE see you at La Terrace Claudine on 13 February ✨</div>
   </div>
 
   <script>
@@ -186,8 +186,16 @@
     const message = document.getElementById("message");
 
     function moveButton() {
-      const x = Math.random() * (window.innerWidth - 140);
-      const y = Math.random() * (window.innerHeight - 70);
+      const btnWidth = noBtn.offsetWidth;
+      const btnHeight = noBtn.offsetHeight;
+
+      const padding = 10; // space from screen edge
+      const maxX = window.innerWidth - btnWidth - padding;
+      const maxY = window.innerHeight - btnHeight - padding;
+
+      const x = Math.random() * (maxX - padding) + padding;
+      const y = Math.random() * (maxY - padding) + padding;
+
       noBtn.style.left = x + "px";
       noBtn.style.top = y + "px";
     }
@@ -202,6 +210,3 @@
 
 </body>
 </html>
-
-
-
